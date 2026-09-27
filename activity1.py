@@ -39,10 +39,28 @@ print(df.info())
 
 #Joint plot
 
-sns.jointplot(x="total_bill" , y="tip" , data=df)
-plt.suptitle("Total bill vs tip" , y=1.02)
+# sns.jointplot(x="total_bill" , y="tip" , data=df)
+# plt.suptitle("Total bill vs tip" , y=1.02)
+# plt.show()
+
+# sns.jointplot(x="total_bill" , y="tip " , data=df , kind="kde" )
+# plt.suptitle("total bill vs tip-kde joint plot" , y=1.02)
+# plt.show()
+
+#Pair plot
+
+# sns.pairplot(df[["total_bill" , "tip" , "size"]])
+# plt.suptitle("Pair plot-Bill,tip, and party size" , y=1.02)
+# plt.show()
+
+#Point plot and implot
+sns.pointplot(x="day" , y="total_bill" , hue="sex" , data=df)
+plt.title("Avg bill per day by gender")
+plt.xlabel("day")
+plt.ylabel("Avg bill($)")
 plt.show()
 
-sns.jointplot(x="total_bill" , y="tip " , data=df , kind="kde" )
-plt.suptitle("total bill vs tip-kde joint plot" , y=1.02)
+#Implot
+sns.implot(x="total_bill" , y="tip" , data=df)
+plt.title("Total bill vs tip-Trend line")
 plt.show()
